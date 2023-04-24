@@ -6,16 +6,19 @@ export default function section2() {
     return (
       <section className="flex flex-col w-screen relative  ">  
         <h1 className="sacramento text-4xl md:text-5xl text-center p-4 mt-5 md:mt-0 transition-all">Treasure and captured the Moments</h1> 
-        <div className="flex flex-col md:flex-row transition-all   ">
-          <ImageWrapper >
-            <Image1 path='/image6.png' />
-            <Image1 path='/image5.png' />
-          </ImageWrapper>
-          <div className="hidden md:block w-2/12"  /> 
-          <ImageWrapper> 
-            <Image1 path='/image4.png' />
-            <Image1 path='/image2.png' />
-          </ImageWrapper>
+        <div className='flex flex-col mt-5'>
+          <h1 className='roboto text-2xl text-center py-0'>Our Works</h1>
+          <div className="flex flex-col md:flex-row transition-all ">
+            <ImageWrapper >
+              <Image1 path='/image6.png' />
+              <Image1 path='/image5.png' />
+            </ImageWrapper>
+            <div className="hidden md:block w-2/12"  /> 
+            <ImageWrapper> 
+              <Image1 path='/image4.png' />
+              <Image1 path='/image2.png' />
+            </ImageWrapper>
+          </div>
         </div>
         <div className="flex flex-col md:flex-row ">
           <ImageWrapper>

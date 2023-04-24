@@ -8,8 +8,8 @@ export default function ImageComponent({path}) {
             whileInView={{opacity: 1}}
             transition={{
                 ease: 'linear',
-                duration: 1.6,
-                type: 'keyframes'
+                duration: 1000,
+                type: 'spring'
             }}
             viewport={{once: false}}
             className='relative h-96 w-11/12 mx-3  shadow-lg mt-3 md:w-5/12  transition-all'

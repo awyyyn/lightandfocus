@@ -1,9 +1,10 @@
  
-import { Header, Section2, Section3, Section4 } from "@/components"
+import { Header, Section2, Section3, Section4, Section5 } from "@/components"
 import Image from "next/image"   
 import { useEffect, useRef, useState } from "react"
 import { motion, useInView } from 'framer-motion'
 import { Router, useRouter } from "next/router"
+import Head from "next/head"
 
 export default function Home() {    
   const [render, setRender] = useState(0); 
@@ -13,10 +14,14 @@ export default function Home() {
     <div  
       className='h-screen w-screen scroll-smooth' 
       id="container" 
+      
       onClick={() => {
         setRender(render => render + 1)
       }} 
     >
+      <Head>
+        <link rel="icon" href="/logo.png" sizes="16x16" />
+      </Head>
       <audio  id='bgMusic' controls className="invisible absolute" loop  src="/sfx/bg.mp3" onPlaying={() => console.log('playing')}  /> 
 
       <Header />   
@@ -37,7 +42,7 @@ export default function Home() {
               onViewportEnter={() => render ? document.getElementById('bgMusic').pause() : console.log('false')} 
               onViewportLeave={() => render ? document.getElementById('bgMusic').play() : console.log('false')}
             >
-              <h1 className="sacramento text-4xl text-center">Welcome to Light and Focus</h1>
+            <h1 className="sacramento text-4xl text-center" >Welcome to Light and Focus</h1>
             </motion.div>
             <p className="text-clip overflow-hidden text-justify leading-7 tracking-wider">
               Is in focus if light from object points has been converged nearly as much as possible in the image, and out of focus if light has not been well converged. The border between these is sometimes defined by a “circle of confusion “ criterion which allows us to convey information and more importantly, emotion in an image.
@@ -55,7 +60,9 @@ export default function Home() {
       </div>
 
       {/* SECTION 4 */} 
-      <Section4 render={render} />  
+      <Section4  />  
+      {/* SECTION 4 */} 
+      <Section5 render={render} />  
     </div>
   )
 }

@@ -1,8 +1,9 @@
 import Image from "next/image"
+import  { motion } from 'framer-motion'
 
 export default function header() {
     return (
-        <header>
+        <header >
             <div className="bg-[#F5D061] h-[17vh] md:h-[20vh] flex justify-center items-center transition-all relative"> 
             <div className="absolute left-5 top-13 md:top-[13] hidden md:block transition-all">
                 <div className="w-44 h-20  md:h-10 flex  relative items-center" >

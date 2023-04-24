@@ -28,7 +28,7 @@ export default function Footer({render}) {
             className='bg-[#F5D061] w-screen h-auto p-1 md:p-5 flex flex-col md:flex-row justify-center md:justify-between '
         >
             <div className="flex flex-col   md:pl-10 w-screen md:w-6/12 ">
-                <h1 className="text-2xl   self-start ">Contact us:</h1>
+                <h1 className="text-2xl pl-4 pt-4 self-start ">Contact us:</h1>
                 <div className="flex gap md:gap-5 mt-5 md:mt-2 justify-evenly md:justify-normal  w-full ">
                     <BsFacebook  
                         size={35}

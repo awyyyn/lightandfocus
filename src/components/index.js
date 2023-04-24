@@ -4,3 +4,4 @@ export { default as Section2 } from './section2.jsx';
 export { default as Section3 } from './section3.jsx';
 export { default as Header } from './header.jsx';
 export { default as Section4 } from './section4.jsx' 
+export { default as Section5 } from './section5.jsx'
