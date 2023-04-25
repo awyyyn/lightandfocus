@@ -89,7 +89,7 @@ export default function Section5({render}) {
 
     return (
         <section className='flex h-auto md:h-screen w-screen relative flex-col'>
-            <div className={`absolute w-fit top-12 right-10 bg-green-300 px-5 py-2 rounded-md items-center gap-x-3 ${save ? 'flex opacity-100 transition-all' : 'hidden opacity-0 transition-all' } z-50`}>
+            <div className={`absolute w-fit sm:top-12   sm:right-10 bg-green-300 px-5 py-2 rounded-md items-center gap-x-3 ${save ? 'flex opacity-100 transition-all' : 'hidden opacity-0 transition-all' } z-50`}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                 </svg>          
@@ -98,12 +98,12 @@ export default function Section5({render}) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg> 
             </div>
-            <div className={`absolute w-fit  top-12 right-10 bg-red-800 px-5 py-2 rounded-md items-center gap-x-3 ${errEmail ? 'flex opacity-100 transition-all' : 'hidden opacity-0 transition-all' } z-50`}>
+            <div className={`absolute w-fit  sm:top-12  sm:right-10 bg-red-800 px-5 py-2 rounded-md items-center gap-x-3 ${errEmail ? 'flex opacity-100 transition-all' : 'hidden opacity-0 transition-all' } z-50`}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="white" className="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                 </svg>          
                 <h1 className='text-white'>Invalid email address!</h1>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="white" className="w-6 h-6 hover:text-slate-500 hover:cursor-pointer" onClick={() => setSave(false)}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="white" className="w-6 h-6 hover:text-slate-500 hover:cursor-pointer" onClick={() => setErrEmail(false)}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg> 
             </div>
@@ -202,8 +202,14 @@ export default function Section5({render}) {
                                 />
                                 <AiFillCheckCircle size={30} className={`absolute right-1 my-3 top-[1px] ${err ? 'text-red-700' : 'text-black'} `} />
                             </div>
+                            <div className={`${errEmail ? 'flex opacity-100' : 'hidden opacity-0' } sm:none gap-x-5 mt-14 w-full transition-all  `}> 
+                                <h1 className='text-red-800 text-center'>Invalid email address!</h1> 
+                            </div>
+                            <div className={`${save ? 'flex opacity-100' : 'hidden opacity-0' } sm:none gap-x-5 mt-14 w-full transition-all  `}> 
+                                <h1 className='text-green-800 text-center'>Package Saved!</h1> 
+                            </div>
                             <button  
-                                className={`${total && 'outline-text-shadow'} mt-16 disabled:cursor-not-allowed  disabled:text-slate-600 mb-4 text-center w-full text-outline hover:drop-shadow-md cursor-pointer transition-all hover:scale-[1.1] disabled:hover:scale-100`}
+                                className={`${total && 'outline-text-shadow'} mb-3 ${errEmail || save ? 'mt-5' : 'mt-16'}  sm:mb-5 disabled:cursor-not-allowed  disabled:text-slate-600  text-center w-full text-outline hover:drop-shadow-md cursor-pointer transition-all hover:scale-[1.1] disabled:hover:scale-100`}
                                 onClick={handleSubmit}
                                 disabled={!total && true}
                             >
