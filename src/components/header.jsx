@@ -17,7 +17,7 @@ export default function header() {
             </div>
             <div className="flex flex-col h-fit transition-all">
                 <h1 className="sacramento text-[50px] md:text-[70px] transition-all">Light and Focus</h1>
-                <h1 className="flex self-center -mt-5 pb-2 min-[320px]:text-white  text-[10px] md:text-sm transition-all ">Treasure and capture the moment</h1>
+                <h1 className="flex self-center -mt-5 pb-2 min-[320px] text-black  text-[10px] md:text-sm transition-all ">Treasure and capture the moment</h1>
             </div>
             </div>
         </header>
