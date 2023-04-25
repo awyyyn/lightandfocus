@@ -4,7 +4,7 @@ import  { motion } from 'framer-motion'
 export default function header() {
     return (
         <header >
-            <div className=" md:bg-[#F5D061] sm:bg-red-600 bg-cyan-400 py-2 md:h-auto md:py-4 flex justify-center items-center transition-all relative "> 
+            <div className="bg-[#F5D061]  py-2 md:h-auto md:py-4 flex justify-center items-center transition-all relative "> 
             <div className="absolute left-5 top-13  hidden sm:block transition-all">
                 <div className="md:w-52 md:h-10 h-10 w-44 flex  relative items-center" >
                     <Image  
