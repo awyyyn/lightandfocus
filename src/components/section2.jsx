@@ -1,7 +1,13 @@
 import Image from 'next/image'
 import { ImageWrapper, Image1 } from '.';
 import { motion } from 'framer-motion';
-import image6 from '../../public/image6.png'
+import image6 from '../../public/image6.png';
+import image5 from '../../public/image5.png';
+import image4 from '../../public/image4.png';
+import image3 from '../../public/image3.png';
+import image2 from '../../public/image2.png';
+import flower from '../../public/flowers.png'
+import image11 from '../../public/image11.png'
 
 export default function section2() {
     return (
@@ -12,12 +18,12 @@ export default function section2() {
           <div className="flex flex-col md:flex-row transition-all ">
             <ImageWrapper >
               <Image1 path={image6} />
-              <Image1 path='/image5.png' />
+              <Image1 path={image5} />
             </ImageWrapper>
             <div className="hidden md:block w-2/12"  /> 
             <ImageWrapper> 
-              <Image1 path='/image4.png' />
-              <Image1 path='/image2.png' />
+              <Image1 path={image4} />
+              <Image1 path={image2} />
             </ImageWrapper>
           </div>
         </div>
@@ -28,7 +34,7 @@ export default function section2() {
                 className='object-cover'
                 fill
                 alt='image'
-                src='/image3.png'
+                src={image3}
               />
             </div> 
           </ImageWrapper>
@@ -48,7 +54,7 @@ export default function section2() {
               className='object-contain'
               fill
               alt='image'
-              src='/flowers.png'
+              src={flower}
             />
           </motion.div>
           <ImageWrapper>
@@ -57,7 +63,7 @@ export default function section2() {
                 className='object-cover'
                 fill
                 alt='image'
-                src='/image11.png'
+                src={image11}
               />
             </div> 
           </ImageWrapper>

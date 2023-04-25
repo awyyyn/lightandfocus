@@ -54,7 +54,7 @@ export default function Footer({render}) {
                         <Link 
                             href="https://www.tiktok.com"
                             target="_blank"
-                            className="peer-hover:visible absolute peer-hover:delay-200 invisible left-full -top-6 bg-opacity-50 text-white bg-black min-w-[200px] px-4 transition-all"
+                            className="peer-hover:visible absolute peer-hover:delay-200 invisible left-full -top-6 bg-opacity-50 text-white bg-black min-w-[200px] rounded-md px-4 transition-all"
                         >
                         https://www.tiktok.com/
                         </Link>
@@ -68,7 +68,7 @@ export default function Footer({render}) {
                         <Link 
                             href="https://www.instagram.com"
                             target="_blank"
-                            className="peer-hover:visible rounded-md absolute peer-hover:delay-200 invisible left-full -top-6 bg-opacity-50 text-white bg-black min-w-[200px] px-4 transition-all"
+                            className="peer-hover:visible rounded-md absolute peer-hover:delay-200 invisible right-1 md:left-full -top-6 bg-opacity-50 text-white bg-black min-w-[230px] px-4 transition-all"
                         >
                         https://www.instagram.com/
                         </Link>
@@ -82,7 +82,7 @@ export default function Footer({render}) {
                         <Link 
                             href="https://www.gmail.com"
                             target="_blank"
-                            className="peer-hover:visible absolute peer-hover:delay-200 invisible left-full -top-6 bg-opacity-50 text-white bg-black min-w-[200px] px-4 transition-all"
+                            className="peer-hover:visible absolute rounded-md peer-hover:delay-200 invisible md:left-full right-1 -top-6 bg-opacity-50 text-white bg-black min-w-[200px] px-4 transition-all"
                         >
                         https://www.gmail.com/
                         </Link>

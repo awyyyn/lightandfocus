@@ -18,7 +18,7 @@ export default function ImageComponent({path}) {
             <Image 
                 loading='lazy' 
                 className='object-cover'
-                fill
+                fill 
                 alt='holding-hands-image'
                 src={path}
             />

@@ -8,8 +8,7 @@ import Head from "next/head"
 
 export default function Home() {    
   const [render, setRender] = useState(0); 
-
-  console.log(render)
+ 
   return ( 
     <div  
       className='h-screen w-screen scroll-smooth' 
@@ -23,7 +22,7 @@ export default function Home() {
         <link rel="icon" href="/logo.svg"   />
         <title className="sacramento">Light and Focus</title>
       </Head>
-      <audio  id='bgMusic' controls className="invisible absolute" loop  src="/sfx/bg.mp3" onPlaying={() => console.log('playing')}  /> 
+      <audio  id='bgMusic' controls className="invisible absolute" loop  src="/sfx/bg.mp3"  /> 
 
       <Header />   
       <div>
@@ -40,8 +39,8 @@ export default function Home() {
           <div   className="flex flex-col flex-wrap md:w-5/12 w-10/12 items-center" > 
             <motion.div 
               viewport={{once: false}}
-              onViewportEnter={() => render ? document.getElementById('bgMusic').pause() : console.log('false')} 
-              onViewportLeave={() => render ? document.getElementById('bgMusic').play() : console.log('false')}
+              onViewportEnter={() => render ? document.getElementById('bgMusic').pause() : null} 
+              onViewportLeave={() => render ? document.getElementById('bgMusic').play() : null}
             >
             <h1 className="sacramento text-4xl text-center" >Welcome to Light and Focus</h1>
             </motion.div>
