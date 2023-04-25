@@ -13,7 +13,6 @@ export default function Home() {
     <div  
       className='h-screen w-screen scroll-smooth' 
       id="container" 
-      
       onClick={() => {
         setRender(render => render + 1)
       }} 
@@ -22,12 +21,11 @@ export default function Home() {
         <link rel="icon" href="/logo.svg"   />
         <title className="sacramento">Light and Focus</title>
       </Head>
-      <audio  id='bgMusic' controls className="invisible absolute" loop  src="/sfx/bg.mp3"  /> 
-
+      <audio  id='bgMusic' controls className="invisible absolute" loop  src="/sfx/bg.mp3"  />  
       <Header />   
       <div>
-        <section className="h-[83vh] w-screen flex items-center justify-evenly flex-col md:flex-row" >
-          <div className="relative w-10/12 sm:w-10/12 md:h-[400px] md:w-3/12 overflow-hidden rounded-3xl hover:shadow-md h-96 m-5 transition-all duration-500">
+        <section className="h-auto md:py-32 w-screen flex items-center justify-evenly flex-col md:flex-row" >
+          <div className="relative w-10/12 md:min-w-[300px] md:max-w-[400px]  md:max-h-[400px] sm:w-10/12 md:w-3/12 overflow-hidden rounded-3xl hover:shadow-md h-96 m-5 transition-all duration-500">
             <Image  
               className="image1"
               color="black" 

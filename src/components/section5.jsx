@@ -90,7 +90,7 @@ export default function Section5({render}) {
     return (
         <section className='flex h-auto md:h-screen w-screen relative flex-col'>
             <div className={`absolute w-fit sm:top-12   sm:right-10 bg-green-300 px-5 py-2 rounded-md items-center gap-x-3 ${save ? 'flex opacity-100 transition-all' : 'hidden opacity-0 transition-all' } z-50`}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" className="w-5 h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor" className="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                 </svg>          
                 <h1>Package Saved!</h1>
@@ -107,8 +107,8 @@ export default function Section5({render}) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg> 
             </div>
-            <div className='w-screen h-10 bg-[#F5D061]' />
-            <div className='h-5/6  w-screen flex flex-col md:flex-row transition-all '>
+            <div className='w-screen min-h-[25px] bg-[#F5D061]' />
+            <div className='w-screen flex flex-col py-10 md:flex-row transition-all h-auto'>
                 <div className='w-11/12 my-5 md:w-6/12  flex justify-center flex-col items-center transition-all'>
                     <div className='w-[80%] md:w-[60%]'>
                         <div className='flex flex-col w-[full] gap-y-[20px] '>
@@ -152,7 +152,8 @@ export default function Section5({render}) {
                     transition={{type: 'spring', duration: .8, damping: 99, stiffness: 99}}
                     whileInView={{opacity: [0.3, 0.6, 0.9, 1], x: 0}}
                     viewport={{once: false }}     
-                    className='relative w-11/12 my-10 md:my-0 md:w-6/12  flex  items-center justify-center transition-all snap-none overflow-hidden'>
+                    className='relative w-11/12 my-10 md:my-0 md:w-6/12  flex  items-center justify-center transition-all snap-none overflow-hidden'
+                >
                     <div className='bg-[#9DF3FF] w-[80%]  h-auto md:overflow-y-scroll  rounded-3xl relative overflow-x-hidden' > 
                         <div className='md:overflow-hidden px-8 pt-5' >
                             <h1 className='text-2xl'>Packages:</h1> 

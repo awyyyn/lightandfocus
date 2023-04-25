@@ -4,20 +4,20 @@ import  { motion } from 'framer-motion'
 export default function header() {
     return (
         <header >
-            <div className="bg-[#F5D061] h-[17vh] md:h-[20vh] flex justify-center items-center transition-all relative"> 
-            <div className="absolute left-5 top-13 md:top-[13] hidden md:block transition-all">
-                <div className="w-44 h-20  md:h-10 flex  relative items-center" >
-                <Image  
-                    color="black" 
-                    alt="logo"
-                    fill
-                    src='/logo.png'
-                /> 
+            <div className=" md:bg-[#F5D061] sm:bg-red-600 bg-cyan-400 py-2 md:h-auto md:py-4 flex justify-center items-center transition-all relative "> 
+            <div className="absolute left-5 top-13  hidden sm:block transition-all">
+                <div className="md:w-52 md:h-10 h-10 w-44 flex  relative items-center" >
+                    <Image  
+                        color="black" 
+                        alt="logo"
+                        fill
+                        src='/logo.png'
+                    /> 
                 </div>
             </div>
             <div className="flex flex-col h-fit transition-all">
                 <h1 className="sacramento text-[50px] md:text-[70px] transition-all">Light and Focus</h1>
-                <h1 className="flex self-center absolute mt-[8vh] md:mt-[11vh] text-[10px] md:text-sm transition-all">Treasure and capture the moment</h1>
+                <h1 className="flex self-center -mt-5 pb-2 min-[320px]:text-white  text-[10px] md:text-sm transition-all ">Treasure and capture the moment</h1>
             </div>
             </div>
         </header>
