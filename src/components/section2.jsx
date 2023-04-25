@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ImageWrapper, Image1 } from '.';
-import { motion } from 'framer-motion' 
+import { motion } from 'framer-motion';
+import image6 from '../../public/image6.png'
 
 export default function section2() {
     return (
@@ -10,7 +11,7 @@ export default function section2() {
           <h1 className='roboto text-2xl text-center py-0'>Our Works</h1>
           <div className="flex flex-col md:flex-row transition-all ">
             <ImageWrapper >
-              <Image1 path='/image6.png' />
+              <Image1 path={image6} />
               <Image1 path='/image5.png' />
             </ImageWrapper>
             <div className="hidden md:block w-2/12"  /> 

@@ -77,10 +77,10 @@ export default function Section5({render}) {
                     
                     initial={{
                         opacity: 0,
-                        x: 200
+                        x: 100
                     }}
-                    transition={{type: 'spring', duration: 1.2, damping: 99, stiffness: 99}}
-                    whileInView={{opacity:1, x: 0}}
+                    transition={{type: 'spring', duration: .8, damping: 99, stiffness: 99}}
+                    whileInView={{opacity: [0.3, 0.6, 0.9, 1], x: 0}}
                     viewport={{once: false }}     
                     className='relative w-11/12 my-10 md:my-0 md:w-6/12  flex  items-center justify-center transition-all snap-none overflow-hidden'>
                     <div className='bg-[#9DF3FF] w-[80%]  h-auto md:overflow-y-scroll  rounded-3xl relative overflow-x-hidden' > 
@@ -122,9 +122,9 @@ export default function Section5({render}) {
                                 {total && <h1 className='text-3xl font-bold'>₱ {total}</h1>}
                             </div> 
                             <h1 className='text-md font-bold   uppercase'>Save my Package</h1>
-                            <div className='relative w-full  '>        
-                                <input className='w-full absolute top-0 left-0 py-2 mt-2 px-4 drop-shadow-md focus:outline outline-gray-700' placeholder='Email' />
-                                <AiFillCheckCircle size={30} className='absolute right-1 top-3 ' />
+                            <div className='relative w-full bg-fuchsia-300 h-4/5 '>        
+                                <input type='email' className='peer w-full absolute top-0 invalid:outline-red-700 left-0 py-2 mt-2 px-4 drop-shadow-md focus:outline outline-gray-700' placeholder='Email' />
+                                <AiFillCheckCircle size={30} className='absolute right-1 top-3 peer-invalid:text-red-600' />
                             </div>
                             <button className='mt-16  mb-4 text-center w-full text-outline hover:drop-shadow-md cursor-pointer transition-all hover:scale-[1.1] '>Pick me up</button>
                         </div> 

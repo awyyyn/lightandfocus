@@ -7,6 +7,7 @@ export default function ImageComponent({path}) {
             initial={{opacity: 0}}
             whileInView={{opacity: 1}}
             transition={{
+                duration: 1.2,
                 ease: 'linear',
                 duration: 1000,
                 type: 'spring'

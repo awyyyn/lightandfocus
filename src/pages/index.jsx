@@ -20,7 +20,8 @@ export default function Home() {
       }} 
     >
       <Head>
-        <link rel="icon" href="/logo.png" sizes="16x16" />
+        <link rel="icon" href="/logo.svg"   />
+        <title className="sacramento">Light and Focus</title>
       </Head>
       <audio  id='bgMusic' controls className="invisible absolute" loop  src="/sfx/bg.mp3" onPlaying={() => console.log('playing')}  /> 
 
