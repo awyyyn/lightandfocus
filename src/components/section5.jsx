@@ -5,7 +5,9 @@ import { AiFillCheckCircle, AiOutlineStar } from 'react-icons/ai'
 import Footer from './footer'
 import { useState } from 'react' 
 import { motion } from 'framer-motion';
-import emailjs  from '@emailjs/browser'
+import Image from 'next/image'
+import emailjs  from '@emailjs/browser';
+import camera from '../../public/camera.png';
 
 export default function Section5({render}) {
     const [pck1, setPck1] = useState(0); 
@@ -108,8 +110,8 @@ export default function Section5({render}) {
                 </svg> 
             </div>
             <div className='w-screen min-h-[25px] bg-[#F5D061]' />
-            <div className='w-screen flex flex-col py-10 md:flex-row transition-all h-auto'>
-                <div className='w-11/12 my-5 md:w-6/12  flex justify-center flex-col items-center transition-all'>
+            <div className='w-screen flex flex-col py-10 md:flex-row transition-all h-auto '>
+                <div className='w-11/12 my-5 md:w-6/12  flex justify-center  flex-col items-center transition-all '>
                     <div className='w-[80%] md:w-[60%]'>
                         <div className='flex flex-col w-[full] gap-y-[20px] '>
                             <h1 className='roboto w-full drop-shadow-lg text-4xl p-3 rounded-lg bg-[#9DF3FF]'>Set Packages</h1>
@@ -150,14 +152,22 @@ export default function Section5({render}) {
                         x: 100
                     }}
                     transition={{type: 'spring', duration: .8, damping: 99, stiffness: 99}}
-                    whileInView={{opacity: [0.3, 0.6, 0.9, 1], x: 0}}
-                    viewport={{once: false }}     
-                    className='relative w-11/12 my-10 md:my-0 md:w-6/12  flex  items-center justify-center transition-all snap-none overflow-hidden'
+                    whileInView={{opacity: 1, x: 0}}
+                    viewport={{once: true }}     
+                    className='relative w-full  md:mx-0 my-10 md:my-0 md:w-6/12  flex  items-center md:justify-center transition-all snap-none overflow-hidden'
                 >
-                    <div className='bg-[#9DF3FF] w-[80%]  h-auto md:overflow-y-scroll  rounded-3xl relative overflow-x-hidden' > 
-                        <div className='md:overflow-hidden px-8 pt-5' >
-                            <h1 className='text-2xl'>Packages:</h1> 
-                            <div className='flex  w-full flex-col'  >
+                    <div className='bg-[#9DF3FF] md:w-[70%] w-[90%] ml-[5%] md:ml-0  h-auto md:overflow-y-auto  rounded-3xl relative overflow-x-hidden' > 
+                        <div className='md:overflow-hidden pt-5' > 
+                            <div className='flex flex-col md:flex-row justify-evenly   border-b  border-black pb-3 gap-y-4 md:gap-0  items-center h-auto'>
+                                <div className='relative h-[150px] w-[200px] overflow-hidden'>
+                                    <Image src={camera}  alt="Camera" className='absolute scale-125 object-cover h-full w-full ' />
+                                </div>
+                                <div className='text-center self-center  '>
+                                    <h1 className='text-5xl sacramento'>Take your shot!</h1>
+                                    <h1 className='text-4xl sacramento'>memories now!</h1>
+                                </div>
+                            </div>
+                            <div className='flex  w-full flex-col px-10 pt-5 sm:px-8'  >
                                 {pck1 ? (
                                     <div className='flex justify-between w-full'>
                                         <div className='flex'>
@@ -188,7 +198,7 @@ export default function Section5({render}) {
                             </div>   
                         </div>
                         <div className='px-8'> 
-                            <div className='flex justify-between'>        
+                            <div className='flex justify-between  border-b border-black'>        
                                 <h1 className='text-3xl text-gray-800'>Total</h1>
                                 {total && <h1 className='text-3xl font-bold'>₱ {total}</h1>}
                             </div> 

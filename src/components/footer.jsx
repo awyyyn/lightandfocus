@@ -30,7 +30,7 @@ export default function Footer({render}) {
         >
             <div className="flex flex-col   md:pl-10 w-screen md:w-6/12 ">
                 <h1 className="text-2xl pl-4 pt-4 self-start ">Contact us:</h1>
-                <div className="flex gap md:gap-5 mt-5 md:mt-2 justify-evenly md:justify-normal  w-full ">
+                <div className="flex gap pl-4 md:gap-5 mt-5 md:mt-2 justify-evenly md:justify-normal  w-full ">
                     <div className="relative">
                         <BsFacebook  
                             size={35}
@@ -91,7 +91,7 @@ export default function Footer({render}) {
                 </div>
             </div>
             <div  className="flex md:items-end pb-3 md:pb-0 justify-center  md:justify-end  md:pr-10 text-lg w-screen mt-10  md:w-6/12">
-                <p className="text-right mr-11">copy right 2023</p>
+                <p className="md:text-right mr-11 text-center">copy right 2023</p>
             </div>
         </motion.div>
     )

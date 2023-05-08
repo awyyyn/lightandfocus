@@ -1,5 +1,5 @@
  
-import { Header, Section2, Section3, Section4, Section5 } from "@/components"
+import { Header, Section2, Section3, Section4, Section5, Section6 } from "@/components"
 import Image from "next/image"   
 import { useEffect, useRef, useState } from "react"
 import { motion, useInView } from 'framer-motion'
@@ -58,9 +58,13 @@ export default function Home() {
       </div>
 
       {/* SECTION 4 */} 
-      <Section4  />  
-      {/* SECTION 4 */} 
+      <Section4  />
+
+      {/* SECTION 5 */} 
       <Section5 render={render} />  
+      {/* SECTION 5 */} 
+
+      <Section6 />  
     </div>
   )
 }
