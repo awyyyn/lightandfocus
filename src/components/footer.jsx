@@ -14,8 +14,7 @@ export default function Footer({render}) {
         <motion.div 
          
             viewport={{once: false}}
-            onViewportEnter={() => render ? document.getElementById('bgMusic').pause() : console.log('false')} 
-            onViewportLeave={() => render ? document.getElementById('bgMusic').play() : console.log('false')}
+            onViewportEnter={() => render ? document.getElementById('bgMusic').pause() :  null}  
         
            /*  initial={{opacity: 0, y: 100}}
             whileInView={{opacity: 1, y:0 }}

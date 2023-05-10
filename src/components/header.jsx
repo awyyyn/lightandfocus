@@ -6,7 +6,7 @@ export default function header() {
         <header >
             <div className="bg-[#F5D061]  py-2 md:h-auto md:py-4 flex justify-center items-center transition-all relative "> 
             <div className="absolute left-5 top-13  hidden sm:block transition-all">
-                <div className="md:w-52 md:h-10 h-10 w-44 flex  relative items-center" >
+                <div className="md:w-52 md:h-[46px] lg:h-[46px] h-10 w-44 flex  relative items-center" >
                     <Image  
                         color="black" 
                         alt="logo"

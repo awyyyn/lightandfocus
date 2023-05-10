@@ -9,7 +9,7 @@ import Image from 'next/image'
 import emailjs  from '@emailjs/browser';
 import camera from '../../public/camera.png';
 
-export default function Section5({render}) {
+export default function Section5() {
     const [pck1, setPck1] = useState(0); 
     const [pck2, setPck2] = useState(0); 
     const [pck3, setPck3] = useState(0); 
@@ -90,7 +90,7 @@ export default function Section5({render}) {
     } 
 
     return (
-        <section className='flex h-auto md:h-screen w-screen relative flex-col'>
+        <section className='flex h-auto md:py-14 w-screen relative flex-col'>
             <div className={`absolute w-fit sm:top-12   sm:right-10 bg-green-300 px-5 py-2 rounded-md items-center gap-x-3 ${save ? 'flex opacity-100 transition-all' : 'hidden opacity-0 transition-all' } z-50`}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor" className="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
@@ -230,7 +230,6 @@ export default function Section5({render}) {
                     </div> 
                 </motion.div>  
             </div> 
-            <Footer render={render} />
         </section>
     )
 }
