@@ -12,7 +12,7 @@ import emailjs from '@emailjs/browser'
 export default function Home() {    
   const [render, setRender] = useState(0); 
   const [isOpen, setIsOpen] = useState(false);
-  const [rateModal, setRateModal] = useState(true);
+  const [rateModal, setRateModal] = useState(false);
   const [rate, setRate] = useState(0);
   const [email, setEmail] = useState('');
   
@@ -147,7 +147,7 @@ export default function Home() {
             }
           }}
         >
-          <div className="md:p-5 md:space-y-10 space-y-4 ">
+          <div className="md:p-5 md:space-y-10 space-y-8 ">
             <h1 className="sacramento text-3xl font-bold tracking-wider md:text-5xl text-center ">Rate us!</h1>
             <div>
               <input type="email" className="shadow-lg w-full px-3 py-2 text-xl text-center invalid:focus:outline-red-500 invalid:border-red-500 invalid:border invalid:focus:border-0" placeholder="example@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} />
