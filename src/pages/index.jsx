@@ -6,19 +6,28 @@ import { motion } from 'framer-motion'
 import Head from "next/head"
 import Footer from "@/components/footer"
 import ReactModal from "react-modal"
-import { BsEmojiDizzyFill, BsEmojiFrownFill, BsEmojiExpressionlessFill, BsEmojiSmileFill, BsEmojiHeartEyesFill, BsEmojiDizzy, BsEmojiLaughing, BsEmojiSmile, BsEmojiExpressionless, BsEmojiFrown } from 'react-icons/bs'
+import { BsEmojiDizzy, BsEmojiLaughing, BsEmojiSmile, BsEmojiExpressionless, BsEmojiFrown } from 'react-icons/bs'
+import emailjs from '@emailjs/browser'
 
 export default function Home() {    
   const [render, setRender] = useState(0); 
   const [isOpen, setIsOpen] = useState(false);
-  const [rateModal, setRateModal] = useState(false);
+  const [rateModal, setRateModal] = useState(true);
   const [rate, setRate] = useState(0);
+  const [email, setEmail] = useState('');
   
   function closeModal() {
     setIsOpen(false);
     setTimeout(() => {
       setRateModal(true)
     }, 3000);
+  }
+
+  const handleSubmitRate = async() => {     
+    await emailjs.send("service_zmtzrrk","template_x17dqdj", {from_name: email, message: `${rate}`}, 'P4FGVzA6fybtNadqF').catch((err) => alert("Email Service or Network Error"));
+    setRateModal(false);
+    setEmail('');
+    setRate(0);
   }
 
   function handleRate(rate) {
@@ -117,12 +126,13 @@ export default function Home() {
         </ReactModal>
 
         <ReactModal   
-          portalClassName='md:w-[50%] w-[80%]'
+          portalClassName='md:w-[50%] w-[100vw]' 
           isOpen={rateModal}
           onRequestClose={() =>{ 
             setRateModal(false);
             setRate(0)
           }}
+          ariaHideApp={false}
           style={{
             overlay: {
               backgroundColor: 'rgba(0, 0, 0, 0.80)', 
@@ -130,18 +140,17 @@ export default function Home() {
             content: {    
               top: '50%',
               left: '50%',
-              right: 'auto', 
-              width: '30%',
+              right: 'auto',  
               bottom: 'auto', 
               marginRight: '-50%',
               transform: 'translate(-50%, -50%)',
             }
           }}
         >
-          <div className="md:p-5 space-y-10 w-full">
-            <h1 className="sacramento text-xl font-bold tracking-wider md:text-5xl text-center ">Rate us!</h1>
+          <div className="md:p-5 md:space-y-10 space-y-4 ">
+            <h1 className="sacramento text-3xl font-bold tracking-wider md:text-5xl text-center ">Rate us!</h1>
             <div>
-              <input className="shadow-lg w-full px-3 py-2 text-xl text-center" placeholder="example@gmail.com" />
+              <input type="email" className="shadow-lg w-full px-3 py-2 text-xl text-center invalid:focus:outline-red-500 invalid:border-red-500 invalid:border invalid:focus:border-0" placeholder="example@gmail.com" value={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div className="flex justify-evenly">
               <BsEmojiDizzy className={`transition-all  ${rate == 1 ? 'text-[red] scale-125' : 'hover:cursor-pointer hover:scale-125 hover:text-[red] '} text-4xl  `} onClick={() => handleRate(1)} />
@@ -151,12 +160,12 @@ export default function Home() {
               <BsEmojiLaughing className={`transition-all ${rate == 5 ? 'text-[green] scale-125' : 'hover:cursor-pointer hover:scale-125 hover:text-[green]'}  text-4xl   `} onClick={() => handleRate(5)} />
             </div>
             <div className="flex flex-col w-full space-y-2">
-              <button className="text-center w-full hover:bg-[#F5D061] bg-[#F5D061] bg-opacity-20 hover:bg-opacity-80 py-2  font-medium" >Send rate</button>
-              <button 
+              <button className="text-center w-full hover:bg-[#F5D061] bg-[#F5D061] bg-opacity-20 hover:bg-opacity-80 py-2  font-medium" onClick={handleSubmitRate}>Send rate</button>
+              <button  
                 className="hover:bg-blue-300 bg-blue-300 bg-opacity-20 py-2 hover:bg-opacity-80" 
                 onClick={() => {
-                  setRateModal(false)
-                  setRate(0);
+                  setRateModal(false);
+                  setRate(0)
                 }}
               >
                 close

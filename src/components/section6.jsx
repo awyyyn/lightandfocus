@@ -2,26 +2,38 @@ import React, { useRef, useState } from 'react';
 import Footer from './footer';
 import img from '../../public/messageimg.jpg';
 import Image from 'next/image';
+import emailjs from '@emailjs/browser'
 
 export default function Section6({handleClick}) { 
-    const  [name, setName] = useState('');
+    const [name, setName] = useState('');
     let [nameErr, setNameErr] = useState(false);
-    const  [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
     let [emailErr, setEmailErr] = useState(false);
-    const  [date, setDate] = useState('');
+    const [date, setDate] = useState('');
     let [dateErr, setDateErr] = useState(false);
-    const  [message, setMessage] = useState('');
+    const [message, setMessage] = useState('');
     let [messageErr, setMessageErr] = useState(false); 
+    const [isLoading, setIsloading] = useState(false)
 
-    const handleSubmit = () => { 
+    const handleSubmit = async() => { 
+        setIsloading(true);
         if(name == "") setNameErr(true) 
-        if(date == '')  setDateErr(true);
-        if(email == '')  setEmailErr(true);
-        if(message == '')    setMessageErr(true);
+        if(date == '') setDateErr(true);
+        if(email == '') setEmailErr(true);
+        if(message == '') setMessageErr(true);
         if(name == '' || email == '' || date == '' || message == "") return ;
         console.log('todo')
+        let sendmessage = ` Name: ${name} \n Date: ${date} \n Email: ${email} \n Message: ${message}.`
+         
+        await emailjs.send("service_e3xvc25","template_cup4982", { message: sendmessage, from_name: email, }, "vd3_PIqM0a3wL8uOa").catch((err) => alert('Email Service or Network Error'));
         handleClick();
+        setName('');
+        setEmail('');
+        setDate('');
+        setMessage('');
+        setIsloading(false);
     } 
+
 
     return (
         <section className='w-screen h-auto md:h-screen relative  flex flex-col'>
@@ -95,7 +107,7 @@ export default function Section6({handleClick}) {
                         />
                     </div> 
                     
-                    <button className='bg-[#9DF3FF] py-2' onClick={handleSubmit}>Send Message</button>
+                    <button className='bg-[#9DF3FF] py-2' onClick={handleSubmit}>{isLoading ? 'Sending...' : 'Send Message'} </button>
                 </div>
             </div>
             
