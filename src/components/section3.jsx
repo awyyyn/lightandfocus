@@ -4,12 +4,12 @@ import image8 from '../../public/image8.png'
 import image9 from '../../public/image9.png'
 import image111 from '../../public/image111.png'
 import image10 from '../../public/image10.png'
-import image12 from '../../public/image12.png'
+import image12 from '../../public/image12.png' 
 
-
-export default function section3() {
+export default function section3({render}) {
     return (
-        <section className="flex mb-10 w-screen flex-col gap-10 mt-5 transition-all">
+        <section 
+            className="flex mb-10 w-screen flex-col gap-10 mt-5 transition-all">
             <div className="flex flex-col gap-5 md:flex-row justify-evenly items-center  w-screen ">
                 <S3image path={image7} />
                 <S3image path={image8} />

@@ -1,9 +1,10 @@
-import Card from "./card"
-
+import Card from "./card";
  
-export default function Section4( ) { 
+export default function Section4({render}) { 
     return( 
-        <section className='flex h-auto      pb-20 w-screen relative flex-col'>
+        <section 
+            className='flex h-auto      pb-20 w-screen relative flex-col'
+            >
             <div className='w-screen h-10 bg-[#F5D061]' />
             <h1 className="w-screen text-[50px] sm:text-7xl pt-10 text-center sacramento">Testimonials</h1>
             <div className=" w-screen h-full overflow-x-scroll scroll-smooth overflow-ellipsis relative py-5 px-10 flex "> 
@@ -34,6 +35,6 @@ export const testimonials = [
     {   
         id: 4,
         testimonial: 'As an amateur photographer, I used to think that as long as I captured the subject in the frame, it was a good shot. But learning about the importance of focus and depth of field opened up a whole new world for me. Now I love playing around with different lighting and focusing techniques to create unique and captivating images.',
-        by: 'Sarah B.'
+        by: 'Jona.'
     }, 
 ]

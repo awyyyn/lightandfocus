@@ -11,11 +11,8 @@ export default function Footer({render}) {
     const router = useRouter()
 
     return (
-        <motion.div 
+        <div 
          
-            viewport={{once: false}}
-            onViewportEnter={() => render ? document.getElementById('bgMusic').pause() :  null}  
-        
            /*  initial={{opacity: 0, y: 100}}
             whileInView={{opacity: 1, y:0 }}
             transition={{
@@ -92,6 +89,6 @@ export default function Footer({render}) {
             <div  className="flex md:items-end pb-3 md:pb-0 justify-center  md:justify-end  md:pr-10 text-lg w-screen mt-10  md:w-6/12">
                 <p className="md:text-right mr-11 text-center">copy right 2023</p>
             </div>
-        </motion.div>
+        </div>
     )
 }

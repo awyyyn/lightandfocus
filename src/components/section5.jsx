@@ -93,7 +93,7 @@ export default function Section5() {
         <section className='flex h-auto md:py-14 w-screen relative flex-col'>
             <div className={`absolute w-fit sm:top-12   sm:right-10 bg-green-300 px-5 py-2 rounded-md items-center gap-x-3 ${save ? 'flex opacity-100 transition-all' : 'hidden opacity-0 transition-all' } z-50`}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor" className="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                 </svg>          
                 <h1>Package Saved!</h1>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-6 h-6 hover:text-black hover:cursor-pointer" onClick={() => setSave(false)}>
@@ -101,8 +101,8 @@ export default function Section5() {
                 </svg> 
             </div>
             <div className={`absolute w-fit  sm:top-12  sm:right-10 bg-red-800 px-5 py-2 rounded-md items-center gap-x-3 ${errEmail ? 'flex opacity-100 transition-all' : 'hidden opacity-0 transition-all' } z-50`}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="white" className="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="white" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                 </svg>          
                 <h1 className='text-white'>Invalid email address!</h1>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="white" className="w-6 h-6 hover:text-slate-500 hover:cursor-pointer" onClick={() => setErrEmail(false)}>

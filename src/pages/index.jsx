@@ -27,7 +27,9 @@ export default function Home() {
     await emailjs.send("service_zmtzrrk","template_x17dqdj", {from_name: email, message: `${rate}`}, 'P4FGVzA6fybtNadqF').catch((err) => alert("Email Service or Network Error"));
     setRateModal(false);
     setEmail('');
-    setRate(0);
+    setTimeout(() => {
+      setRate(0);
+    }, 5000);
   }
 
   function handleRate(rate) {
@@ -71,13 +73,13 @@ export default function Home() {
               /> 
             </div>
             <div   className="flex flex-col flex-wrap md:w-5/12 w-10/12 items-center" > 
-              <motion.div 
-                viewport={{once: false}}
-                onViewportEnter={() => render ? document.getElementById('bgMusic').pause() : null} 
-                onViewportLeave={() => render ? document.getElementById('bgMusic').play() : null}
+              <div 
+                // viewport={{once: false}}
+                // onViewportEnter={() => render ? document.getElementById('bgMusic').pause() : null} 
+                // onViewportLeave={() => render ? document.getElementById('bgMusic').play() : null}
               >
               <h1 className="sacramento text-4xl text-center" >Welcome to Light and Focus</h1>
-              </motion.div>
+              </div>
               <p className="text-clip overflow-hidden text-justify leading-7 tracking-wider">
                 Is in focus if light from object points has been converged nearly as much as possible in the image, and out of focus if light has not been well converged. The border between these is sometimes defined by a “circle of confusion “ criterion which allows us to convey information and more importantly, emotion in an image.
               </p>
@@ -85,14 +87,19 @@ export default function Home() {
           </section>
         </div>
 
-        <div>
+        <motion.div
+        
+          viewport={{once: false}}
+          onViewportEnter={() => render ? document.getElementById('bgMusic').play() :  null}  
+          onViewportLeave={() => render ? document.getElementById('bgMusic').pause() :  null}  
+          >
           {/* SECTION 2 */}
           <Section2 />
 
 
           {/* SECTION 3 */}
           <Section3 />
-        </div>
+        </motion.div>
 
         {/* SECTION 4 */} 
         <Section4  />
@@ -177,7 +184,7 @@ export default function Home() {
         {/* SECTION 6 */} 
         <Section6  render={render} handleClick={handelModal} />  
         
-        <Footer render={render} />
+        <Footer/>
       </div>
     </div> 
   )
